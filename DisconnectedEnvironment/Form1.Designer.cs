@@ -353,6 +353,7 @@ namespace DisconnectedEnvironment
             this.cmdAdd.TabIndex = 2;
             this.cmdAdd.Text = "Add";
             this.cmdAdd.UseVisualStyleBackColor = true;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // cmdSave
             // 
@@ -362,6 +363,7 @@ namespace DisconnectedEnvironment
             this.cmdSave.TabIndex = 3;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = true;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
             // cmdDelete
             // 
@@ -371,6 +373,7 @@ namespace DisconnectedEnvironment
             this.cmdDelete.TabIndex = 4;
             this.cmdDelete.Text = "Delete";
             this.cmdDelete.UseVisualStyleBackColor = true;
+            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // prodiTIDataSet
             // 
