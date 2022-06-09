@@ -61,14 +61,25 @@ namespace DisconnectedEnvironment
             this.cmdAdd = new System.Windows.Forms.Button();
             this.cmdSave = new System.Windows.Forms.Button();
             this.cmdDelete = new System.Windows.Forms.Button();
+            this.prodiTIDataSet = new DisconnectedEnvironment.ProdiTIDataSet();
+            this.empdetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empdetailsTableAdapter = new DisconnectedEnvironment.ProdiTIDataSetTableAdapters.empdetailsTableAdapter();
+            this.prodiTIDataSet1 = new DisconnectedEnvironment.ProdiTIDataSet1();
+            this.empdetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.empdetailsTableAdapter1 = new DisconnectedEnvironment.ProdiTIDataSet1TableAdapters.empdetailsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.empdetailsBindingSource1;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -277,6 +288,7 @@ namespace DisconnectedEnvironment
             // 
             // txtCode
             // 
+            this.txtCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "ccode", true));
             this.txtCode.Location = new System.Drawing.Point(103, 3);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(94, 20);
@@ -284,6 +296,7 @@ namespace DisconnectedEnvironment
             // 
             // txtName
             // 
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "cname", true));
             this.txtName.Location = new System.Drawing.Point(103, 25);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(94, 20);
@@ -291,6 +304,7 @@ namespace DisconnectedEnvironment
             // 
             // txtAddress
             // 
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "caddress", true));
             this.txtAddress.Location = new System.Drawing.Point(103, 47);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(94, 20);
@@ -298,6 +312,7 @@ namespace DisconnectedEnvironment
             // 
             // txtState
             // 
+            this.txtState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "cstate", true));
             this.txtState.Location = new System.Drawing.Point(103, 67);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(94, 20);
@@ -305,13 +320,16 @@ namespace DisconnectedEnvironment
             // 
             // txtCountry
             // 
+            this.txtCountry.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "country", true));
             this.txtCountry.Location = new System.Drawing.Point(103, 87);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(94, 20);
             this.txtCountry.TabIndex = 13;
+            this.txtCountry.TextChanged += new System.EventHandler(this.txtCountry_TextChanged);
             // 
             // cbDesignation
             // 
+            this.cbDesignation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "cDesignation", true));
             this.cbDesignation.FormattingEnabled = true;
             this.cbDesignation.Location = new System.Drawing.Point(103, 107);
             this.cbDesignation.Name = "cbDesignation";
@@ -320,6 +338,7 @@ namespace DisconnectedEnvironment
             // 
             // cbDepartement
             // 
+            this.cbDepartement.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empdetailsBindingSource1, "cDepartement", true));
             this.cbDepartement.FormattingEnabled = true;
             this.cbDepartement.Location = new System.Drawing.Point(103, 127);
             this.cbDepartement.Name = "cbDepartement";
@@ -353,6 +372,34 @@ namespace DisconnectedEnvironment
             this.cmdDelete.Text = "Delete";
             this.cmdDelete.UseVisualStyleBackColor = true;
             // 
+            // prodiTIDataSet
+            // 
+            this.prodiTIDataSet.DataSetName = "ProdiTIDataSet";
+            this.prodiTIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empdetailsBindingSource
+            // 
+            this.empdetailsBindingSource.DataMember = "empdetails";
+            this.empdetailsBindingSource.DataSource = this.prodiTIDataSet;
+            // 
+            // empdetailsTableAdapter
+            // 
+            this.empdetailsTableAdapter.ClearBeforeFill = true;
+            // 
+            // prodiTIDataSet1
+            // 
+            this.prodiTIDataSet1.DataSetName = "ProdiTIDataSet1";
+            this.prodiTIDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empdetailsBindingSource1
+            // 
+            this.empdetailsBindingSource1.DataMember = "empdetails";
+            this.empdetailsBindingSource1.DataSource = this.prodiTIDataSet1;
+            // 
+            // empdetailsTableAdapter1
+            // 
+            this.empdetailsTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,11 +412,16 @@ namespace DisconnectedEnvironment
             this.Controls.Add(this.bindingNavigator1);
             this.Name = "Form1";
             this.Text = "Employee Details";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodiTIDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empdetailsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,6 +459,12 @@ namespace DisconnectedEnvironment
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.Button cmdDelete;
+        private ProdiTIDataSet prodiTIDataSet;
+        private System.Windows.Forms.BindingSource empdetailsBindingSource;
+        private ProdiTIDataSetTableAdapters.empdetailsTableAdapter empdetailsTableAdapter;
+        private ProdiTIDataSet1 prodiTIDataSet1;
+        private System.Windows.Forms.BindingSource empdetailsBindingSource1;
+        private ProdiTIDataSet1TableAdapters.empdetailsTableAdapter empdetailsTableAdapter1;
     }
 }
 
